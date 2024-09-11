@@ -1,0 +1,534 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.main-content {
+    margin: 0 auto; /* Centro el contenedor principal */
+    padding: 20px;
+    width: 100%;
+    max-width: 1200px;
+    text-align: center; /* Centra el contenido del texto */
+}
+.description{
+    margin: 10px auto;
+    padding: 10px;
+    font-size: 20px;
+    font-family: sans-serif;
+    color: rgb(58, 53, 53);
+    text-align: left;
+    line-height: 1.5;
+    max-width: 950px;
+}
+.intro{
+    margin-bottom: 20px;
+}
+.subheading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 28px;
+    font-family: sans-serif;
+    margin:auto;
+    padding: 10px;
+}
+.subheading-description {
+    margin: 10px auto;
+    padding: 10px;
+    font-size: 18px;
+    font-family: sans-serif;
+    color: rgb(58, 53, 53);
+    text-align: left;
+    line-height: 1.5;
+    max-width: 950px;
+}
+.title{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 44px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    margin:0;
+    padding: 10px;
+    text-align: center;
+}
+.main-content.page-container{
+    padding: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 200px;
+}
+/* Estilo del párrafo dentro del <h1> */
+.title p {
+    font-size: 16px;
+    margin: 0;
+    padding: 5px 0;
+    text-align: center;
+}
+.header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    box-sizing: border-box; /* Incluye el padding y el borde en el cálculo del ancho total */
+}
+.header a img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 5px;
+}
+@media (min-width: 992px){
+.header{
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    }
+}
+.navigation{
+        width: 100%;
+        max-width: 1200px;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        background-color: white;
+        z-index: 1000;
+        border: 1px solid rgb(155, 130, 130);
+}
+.navigation ul{
+        list-style: none;
+}
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+}
+.menu > li{
+    position: relative;
+    display: inline-block;
+    min-width: 100px;
+    align-items: center;
+}
+.menu > li > a{
+    display: block;
+    padding: 15px;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.1s, color 0.1s;
+    
+}
+
+.menu li a:hover{
+    background-color: silver;
+    color: black;
+    
+}
+.submenu{
+    display: none;
+    list-style: none;
+    position: absolute; 
+    background-color: white;
+    border: 1px solid rgb(70, 67, 67);
+    top: 100%;
+    left: 0;
+    width: 100%; /* Asegura que el submenú se alinee con el menú */
+    z-index: 10; /* Asegura que el submenú se muestre sobre otros elementos */
+    padding: 0;
+    margin: 0;
+}
+.submenu li a{
+    display: block;
+    padding: 10px;
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+}
+.menu li:hover .submenu{
+    display: block;
+    border: solid rgb(70, 67, 67) 1px;
+    align-items: center;
+    padding: 0;
+}
+.menu-icon {
+    display: none; /* Oculto por defecto en pantallas grandes */
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    margin: 10px;
+}
+
+/* Ocultar el checkbox por defecto */
+.menu-toggle {
+    display: none;
+}
+/* Menú */
+.nav {
+    display: flex;
+}
+.gallery{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+.gallery-item{
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Alinea el contenido verticalmente */
+    flex-direction: row; /* Dirección de los elementos en fila */
+    max-width: 270px;
+    text-align: center;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    overflow: hidden;
+    background-color: #fff;
+}
+.gallery-item img{
+    max-width: 150%; /* Asegura que la imagen no exceda el contenedor */
+    height: auto; /* Mantén la proporción de la imagen */
+    margin: auto; /* Centra la imagen horizontalmente */
+    display: inline-block; /* Asegura que la imagen se comporte como un elemento en línea */
+    transition: transform 0.3s; /* Mantén la transición para el hover */
+    text-align: center; /* Centra el contenido del contenedor */
+    justify-content: center;
+}
+.gallery-item img:hover{
+    transform: scale(1.05);
+}
+.gallery-item p{
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+
+.tarjeta {
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: center;
+    align-items: center;
+    text-align: center;
+}
+.tarjeta img {
+    width: 120%;
+    height: auto;
+    display: block;
+    object-fit: cover; /* Mantiene el aspecto de la imagen sin estirarla */
+    justify-content: center;
+    align-items: center;
+}
+.tarjeta-content {
+    padding: 15px; /* Menos espacio arriba y abajo */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Espacio distribuido entre el contenido */
+    align-items: center; /* Alinea verticalmente al inicio */
+}
+.tarjeta-titulo{
+    font-size: 18px; /* Tamaño de la fuente del título */
+    margin: 0 0 1px; /* Márgenes para separar el título del resto del contenido */
+    color: black; 
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+.tarjeta-titulo a {
+    text-decoration: none; /* Elimina el subrayado del enlace */
+    color: inherit; /* Hereda el color del texto del título */
+    justify-content: center;
+    align-items: center;
+    transition: color 0.3s, text-decoration 0.3s; /* Añade una transición suave para los cambios de estilo */
+}
+.tarjeta-descripcion {
+    font-size: 14px; /* Tamaño de la fuente de la descripción */
+    color: #666; /* Color del texto de la descripción */
+    line-height: 1.5; /* Espaciado entre líneas para mejor legibilidad */
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+}
+.tarjeta:hover {
+    transform: scale(1.03);
+}
+/* Efectos al pasar el cursor sobre el enlace */
+.tarjeta-titulo a:hover,
+.tarjeta-titulo a:focus {
+    text-decoration: underline; /* Subraya el enlace al pasar el cursor */
+    color: #0056b3; /* Cambia el color del enlace al pasar el cursor (ajusta el color según tus necesidades) */
+}
+
+.card {
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+}
+.card:hover {
+    transform: scale(1.03);
+}
+.card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover; /* Mantiene el aspecto de la imagen sin estirarla */
+}
+.card-content {
+    padding: 5px 10px; /* Menos espacio arriba y abajo */
+    display: flex;
+    justify-content: space-between; /* Espacio distribuido entre el contenido */
+    align-items: flex-start; /* Alinea verticalmente al inicio */
+    border-top: 2px solid #000; /* Línea negra debajo de la imagen */
+    margin-top: 5px; /* Añade espacio entre la imagen y la línea */
+}
+.item-description{
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    display: -webkit-box; /* Necesario para el line-clamp */
+    line-clamp: 3;
+    -webkit-line-clamp: 3; /* Muestra un máximo de 3 líneas */
+    -webkit-box-orient: vertical; /* Necesario para el line-clamp */
+    overflow: hidden; /* Oculta el desbordamiento */
+    text-overflow: ellipsis; /* Muestra puntos suspensivos si el texto es demasiado largo */
+    text-align: left;
+    flex: 1; /* Permite que la descripción ocupe el espacio restante */
+    padding-top: 5px; /* Menos espacio entre la descripción y la línea */
+    text-decoration: underline; /* Subraya el texto */
+}
+.price {
+    font-size: 20px;
+    font-weight: bold;
+    color: white; /* Texto blanco */
+    background-color: black; /* Fondo negro */
+    padding: 10px 20px;
+    text-align: center;
+}
+.sale-badge {
+    position: absolute;
+    top: 10px; /* Ajusta según tu diseño */
+    right: 1px; /* Ajusta según tu diseño */
+    background-color: rgba(25, 109, 25, 0.822);
+    color: white;
+    padding: 5px 10px;
+    font-size: 14px;
+    border: 5px;
+}
+@media (max-width: 768px) {
+    .gallery-item {
+        flex: 1 1 100%; /* Asegura que cada elemento de la galería ocupe toda la fila en pantallas pequeñas */
+        min-width: auto;
+    }
+}
+.footer{
+    background-color: #222;
+    padding: 20px;
+    text-align: center;
+}
+.footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.footer-text {
+    margin: 10px 0;
+    font-size: 14px;
+    color: silver;
+}
+.social-icons a {
+    display: inline-block; /* Asegura que los iconos se alineen en una línea */
+}
+.social-icons img {
+    width: 30px; /* Ajusta el tamaño según sea necesario */
+    height: 30px; /* Ajusta el tamaño según sea necesario */
+    transition: transform 0.3s;
+}
+.social-icons img:hover {
+    transform: scale(1.2); /* Aumenta el tamaño al pasar el ratón */
+}
+
+.chevron-icon {
+    width: 10px; /* Ajusta el tamaño de la imagen del chevron */
+    height: auto;
+    color: black;
+    margin-left: 5px; /* Espacio entre el texto y la imagen */
+    vertical-align: middle; /* Alinea verticalmente la imagen con el texto */
+    transition: transform 0.1s ease; /* Añade una transición suave para la rotación */
+}
+.menu > li:hover > a .chevron-icon {
+    /* transform: rotate(180deg);  */
+    /* Rota la imagen cuando se activa el menú */
+
+    transform: rotate(180deg); /* Rota el chevron 180 grados */
+}
+
+
+
+
+
+
+
+
+/* Estilos para impresión */
+@media print {
+    .header {
+        position: static; /* Cambia a estático para evitar problemas con fixed */
+    }
+    .main-content.page-container {
+        margin: 0; /* Elimina márgenes en el contenedor principal */
+    }
+    .menu {
+        display: flex; /* Usa flexbox para alinear el menú horizontalmente */
+        flex-direction: row; /* Alinea los elementos del menú en una fila */
+        list-style: none; /* Elimina las viñetas */
+        padding: 0; /* Elimina el padding */
+        margin: 0; /* Elimina el margen */
+    }
+    .menu > li {
+        margin: 4 4px; /* Ajusta el margen entre los elementos del menú */
+        display: inline-block; /* Asegúrate de que los elementos se muestren en línea */
+    }
+    .menu > li > a {
+        font-size: 14px; /* Ajusta el tamaño del texto */
+        padding: 4px 11px; /* Ajusta el padding */
+    }
+    .submenu {
+        display: none;
+    }
+    .menu-icon {
+        display: none; /* Oculta el ícono del menú si no es necesario en impresión */
+    }
+    .chevron-icon {
+        display: none; /* Oculta el chevron en impresión si no es necesario */
+    }
+}
+
+
+
+
+
+
+
+@media (pointer: coarse) {
+    .menu-icon {
+        display: block;
+        cursor: pointer;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 1010;
+        padding: 10px;
+        border-radius: 50%;
+        background-color: transparent;
+    }
+    .navigation {
+        display: none;
+        position: fixed;
+        top: 15%;
+        left: 50%;
+        transform: translate(-50%, 0);
+        width: 80%;
+        max-height: 60vh;
+        overflow-y: auto;
+        background-color: #fff;
+        z-index: 1000;
+        border-radius: 10px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+        transform: translateY(-100%); /* Inicialmente fuera de la vista */
+    }
+    .menu-toggle:checked + .menu-icon + .navigation {
+        display: block;
+        transform: translateY(0); /* Mueve el menú a la vista */
+    }
+    .menu {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+    }
+    .menu > li {
+        border-bottom: 1px solid #ddd;
+        text-align: left;
+        padding: 10px 15px;
+        position: relative; /* Necesario para el submenú */
+    }
+    .menu > li > a {
+        display: flex;
+        position: relative;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        text-decoration: none;
+        color: #333;
+        padding: 10px 0;
+    }
+    .submenu {
+        display: none;
+        padding-left: 20px;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        position: relative;
+        z-index: 1000;
+    }
+    .chevron-icon {
+        width: 10px;
+        height: auto;
+        margin-left: 5px;
+        vertical-align: middle;
+        transition: transform 0.1s ease;
+    }
+/* Mostrar el submenú cuando el menú está activo */
+    .menu > li.active .submenu {
+        display: block;
+        padding-left: 20px;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        position: relative;
+        z-index: 1000;
+}
+/* Girar el chevron cuando el submenú está visible */
+.menu > li.active .chevron-icon {
+    transform: rotate(180deg); /* Rota el chevron 180 grados */
+}
+.menu > li > a .chevron-icon {
+    cursor: pointer; /* Cambia el cursor para indicar que es clicable */
+}
+}
+
+
+#clock {
+    font-size: 2em;
+    font-family: 'Arial', sans-serif;
+    margin: -6px;
+    color: #333;
+}
